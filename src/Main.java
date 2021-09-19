@@ -1,5 +1,7 @@
 import java.util.HashMap;
 import java.util.Random;
+import java.util.Scanner;
+import java.util.*;
 
 public class Main {
 
@@ -11,15 +13,17 @@ public class Main {
     public static HashMap<Integer, String> cardIdToName;
     // need a random variable
     public static Random rand;
+    public static Scanner input;
 
     public static void main(String[] args) {
         mainInit();
         new Game();
-
+        System.out.println();
     } // main 
 
     // Main methods/functions
     static void mainInit(){
+        input = new Scanner(System.in);
         // initialize random variable
         rand = new Random();
         cardIdToName = new HashMap<>();

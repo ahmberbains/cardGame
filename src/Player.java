@@ -12,6 +12,21 @@ public class Player {
     } // constructor 
 
     // Player methods/functions
+    boolean tryPlayCard(Card c){
+        // get the top card for the comparison.
+        Card topCard = Game.pile.peek();
+        boolean canPlay = false;
+        if(c.number == 8 || c.number == topCard.number || c.suit == topCard.suit){
+            canPlay = true;
+        }
+        if(canPlay){
+            cardsInHand.remove(c);
+            Game.pile.push(c); // add card to top
+        }
+
+        return canPlay;
+    } //tryPlayCard
+
     void doTurn(){
         System.out.printf("\nIt's %s's turn. \n", name);
         // notice the peek() function, same as pop except does not remove from stack
