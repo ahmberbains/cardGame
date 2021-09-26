@@ -23,8 +23,14 @@ public class Game {
         // start pile, by taking the top card from deck and putting it on the pile
         pile.push(deck.pop()); // we can do both in one line
         // start the game
-        for(Player p: players){
-            p.doTurn();
+        while(true){
+            for(Player p: players){
+                p.doTurn();
+                if(p.cardsInHand.size() == 0){
+                    System.out.printf("%s won! Let's have a party.\n", p.name);
+                    return;
+                }
+            }
         }
 
     } // constructor 

@@ -12,6 +12,11 @@ public class Player {
     } // constructor 
 
     // Player methods/functions
+
+    void getCardFromDeck(){
+        cardsInHand.add(Game.deck.pop());
+    } //getCardFromDeck
+
     boolean tryPlayCard(Card c){
         // get the top card for the comparison.
         Card topCard = Game.pile.peek();
